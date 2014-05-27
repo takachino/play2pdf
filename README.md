@@ -1,10 +1,10 @@
-Play 2.0 PDF module
+Play2pdf module
 ===================
 
 ## Notice
 
 * The [original project](https://github.com/joergviola/play20-pdf) by @joergviola was declared unsupported on January 17, 2014
-* The most active fork seems to be https://github.com/fhars/play20-pdf
+* The most active fork (aside from this one) seems to be https://github.com/fhars/play20-pdf
 
 This module helps generating PDF documents dynamically from your Play! web application.
 It simply renders your HTML- and CSS-based templates to PDF.
@@ -14,15 +14,15 @@ Usage
 -----
 
 I have provided a simple example application at
-https://github.com/joergviola/play20-pdf/samples/pdf-sample.
+https://github.com/alias1/play2pdf/samples/pdf-sample
 
 You can use a standard Play! scala template like this one:
 ``` html
-@(message: String)
+	@(message: String)
 
-Image: <img src="/public/images/favicon.png"/><br/>
-Hello world! <br/>
-@message <br/>
+	Image: <img src="/public/images/favicon.png"/><br/>
+	Hello world! <br/>
+	@message <br/>
 ```
 
 Then this template, after having imported ```util.pdf.PDF```, can simply be rendered as:
@@ -47,9 +47,9 @@ If you specify the URI as a path into the classpath of your Play! app, the resou
 See the above sample template for an example.
 
 Of course you can link to CSS files in your class path also, but be aware not to
-use the ``` media="screen"```qualifier.
+use the `media="screen"` qualifier.
 
-Fonts you use must be explicitely packaged with your app.
+Fonts you use must be explicitly packaged with your app.
 ```
 <html>
 	<head>
@@ -65,6 +65,7 @@ Fonts you use must be explicitely packaged with your app.
 	</body>
 </html>
 ```
+
 Since the FreeSans font is not available to the java VM, you are required to
 add the corresponding font file, "FreeSans.ttf" to your Play! app.
 The module adds ```/conf/resources/fonts``` to the list of directories
@@ -78,11 +79,11 @@ Therefore, including the following lines in your ```Build.scala``` will resolve 
 ```
 val appDependencies = Seq(
   ...
-      "de.joergviola" %% "play-pdf_2.10" % "0.6.2-SNAPSHOT"
+      "de.joergviola" %% "play2pdf_2.10" % "0.6.3-SNAPSHOT"
 )
 val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings(
   ...
-  resolvers += Resolver.url("play20-pdf Repository", url("http://alias1.github.io/play20-pdf/snapshots/"))(Resolver.ivyStylePatterns)
+  resolvers += Resolver.url("play2pdf Repository", url("http://alias1.github.io/play2pdf/snapshots/"))(Resolver.ivyStylePatterns)
 )
 ```
 After the next restart of Play!, the module is available.
@@ -91,9 +92,9 @@ If you are using an IDE like Eclipse, remember to re-generate your project files
 (Note: This might not work..) The module can be loaded (sbt v13.0+)  in your build.sbt via git
 ```
 lazy val myProject = project.in(file("."))
-    .aggregate(play20Pdf)
-    .dependsOn(play20Pdf)
-lazy val play20Pdf = ProjectRef( uri("https://github.com/alias1/play20-pdf.git"), "play20-pdf")
+    .aggregate(play2pdf)
+    .dependsOn(play2pdf)
+lazy val play2pdf = ProjectRef( uri("https://github.com/alias1/play2pdf.git"), "play2pdf")
 ```
 After the next restart of Play!, the module is available.
 If you are using an IDE like Eclipse, remember to re-generate your project files.
@@ -109,9 +110,9 @@ Releases
 
 <table>
 	<tr>
-		<td>0.6.2</td>
+		<td>0.6.3</td>
 		<td>27.05.2014</td>
-		<td>Modified to Play 2.2.3 style module, created ivy repository, etc</td>
+		<td>Modified to Play 2.2.3 style module, created ivy repository, changed name to play2pdf, upgraded to flying saucer v9.0.6, etc</td>
 		<td>Glenn 'devalias' Grant (@alias1)</td>
 	</tr>
 	<tr>
