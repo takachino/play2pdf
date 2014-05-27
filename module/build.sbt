@@ -1,8 +1,8 @@
-name := "play-pdf"
+name := "play2pdf"
 
 organization := "de.joergviola"
 
-version := "0.6.2-SNAPSHOT"
+version := "0.6.3-SNAPSHOT"
 
 libraryDependencies ++= Seq(
   javaJdbc,
