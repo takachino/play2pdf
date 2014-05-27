@@ -76,9 +76,24 @@ Installation
 ------------
 
 TODO: [Publishing Play2 modules on Github](http://www.javacodegeeks.com/2012/05/publishing-play-2-modules-on-github.html)
+Currently, the module is hosted at hhttp://alias1.github.io/play20-pdf/snapshots/
+Therefore, including the following lines in your ```Build.scala``` will resolve it:
+```
+val appDependencies = Seq(
+  ...
+      "de.joergviola" %% "play-pdf_2.10" % "0.6.2-SNAPSHOT"
+)
+val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings(
+  ...
+  resolvers += Resolver.url("play20-pdf Repository", url("http://alias1.github.io/play20-pdf/snapshots/"))(Resolver.ivyStylePatterns)
+)
+```
+After the next restart of Play!, the module is available.
+If you are using an IDE like Eclipse, remember to re-generate your project files.
+
 (Note: This might not work..) The module can be loaded (sbt v13.0+)  in your build.sbt via git
 ```
-lazy val welcomerPlay = project.in(file("."))
+lazy val myProject = project.in(file("."))
     .aggregate(play20Pdf)
     .dependsOn(play20Pdf)
 lazy val play20Pdf = ProjectRef( uri("https://github.com/alias1/play20-pdf.git"), "play20-pdf")
