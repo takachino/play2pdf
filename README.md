@@ -20,11 +20,9 @@ You can use a standard Play! scala template like this one:
 ``` html
 @(message: String)
 
-@main("Welcome to Play 2.0") {
-    Image: <img src="/public/images/favicon.png"/><br/>
-    Hello world! <br/>
-    @message <br/>
-}
+Image: <img src="/public/images/favicon.png"/><br/>
+Hello world! <br/>
+@message <br/>
 ```
 
 Then this template, after having imported ```util.pdf.PDF```, can simply be rendered as:
