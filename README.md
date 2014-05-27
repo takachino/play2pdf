@@ -73,7 +73,6 @@ searched for font files.
 Installation
 ------------
 
-TODO: [Publishing Play2 modules on Github](http://www.javacodegeeks.com/2012/05/publishing-play-2-modules-on-github.html)
 Currently, the module is hosted at hhttp://alias1.github.io/play20-pdf/snapshots/
 Therefore, including the following lines in your ```Build.scala``` will resolve it:
 ```
