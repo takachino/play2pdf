@@ -75,7 +75,8 @@ searched for font files.
 Installation
 ------------
 
-The module can be loaded (sbt v13.0+)  in your build.sbt via git
+TODO: [Publishing Play2 modules on Github](http://www.javacodegeeks.com/2012/05/publishing-play-2-modules-on-github.html)
+(Note: This might not work..) The module can be loaded (sbt v13.0+)  in your build.sbt via git
 ```
 lazy val welcomerPlay = project.in(file("."))
     .aggregate(play20Pdf)
