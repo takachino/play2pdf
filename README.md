@@ -1,6 +1,11 @@
 Play 2.0 PDF module
 ===================
 
+## Notice
+
+* The [original project](https://github.com/joergviola/play20-pdf) by @joergviola was declared unsupported on January 17, 2014
+* The most active fork seems to be https://github.com/fhars/play20-pdf
+
 This module helps generating PDF documents dynamically from your Play! web application.
 It simply renders your HTML- and CSS-based templates to PDF.
 It is based on the Flying Saucer library, which in turn uses iText for PDF generation.
@@ -27,7 +32,7 @@ Then this template, after having imported ```util.pdf.PDF```, can simply be rend
 	public static Result document() {
 		return PDF.ok(document.render("Your new application is ready."));
 	}
-```  
+```
 where ```PDF.ok``` is a simple shorthand notation for:
 ``` java
 	ok(PDF.toBytes(document.render("Your new application is ready."))).as("application/pdf")
@@ -44,8 +49,8 @@ If you specify the URI as a path into the classpath of your Play! app, the resou
 See the above sample template for an example.
 
 Of course you can link to CSS files in your class path also, but be aware not to
-use the ``` media="screen"```qualifier. 
-  
+use the ``` media="screen"```qualifier.
+
 Fonts you use must be explicitely packaged with your app.
 ```
 <html>
@@ -55,7 +60,7 @@ Fonts you use must be explicitely packaged with your app.
 			...
 			font-family: FreeSans;
 		}
-		--></style>	
+		--></style>
 	</head>
 	<body>
 		...
@@ -70,20 +75,15 @@ searched for font files.
 Installation
 ------------
 
-Currently, the module is hosted at http://www.joergviola.de/releases/.
-Therefore, including the following lines in your ```Build.scala``` will resolve it:
+The module can be loaded (sbt v13.0+)  in your build.sbt via git
 ```
-val appDependencies = Seq(
-  ...
-      "de.joergviola" %% "play-pdf" % "0.6-SNAPSHOT"
-)
-val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings(
-  ...
-  resolvers += Resolver.url("Violas Play Modules", url("http://www.joergviola.de/releases/"))(Resolver.ivyStylePatterns)
-)
+lazy val welcomerPlay = project.in(file("."))
+    .aggregate(play20Pdf)
+    .dependsOn(play20Pdf)
+lazy val play20Pdf = ProjectRef( uri("https://github.com/alias1/play20-pdf.git"), "play20-pdf")
 ```
 After the next restart of Play!, the module is available.
-If you are using an IDE like Eclipse, remember to re-generate your project files. 
+If you are using an IDE like Eclipse, remember to re-generate your project files.
 
 
 License
