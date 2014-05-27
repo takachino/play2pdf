@@ -73,7 +73,7 @@ searched for font files.
 Installation
 ------------
 
-Currently, the module is hosted at hhttp://alias1.github.io/play20-pdf/snapshots/
+Currently, the module is hosted at http://alias1.github.io/play20-pdf/snapshots/
 Therefore, including the following lines in your ```Build.scala``` will resolve it:
 ```
 val appDependencies = Seq(
@@ -108,6 +108,12 @@ Releases
 ------------
 
 <table>
+	<tr>
+		<td>0.6.2</td>
+		<td>27.05.2014</td>
+		<td>Modified to Play 2.2.3 style module, created ivy repository, etc</td>
+		<td>Glenn 'devalias' Grant (@alias1)</td>
+	</tr>
 	<tr>
 		<td>0.5</td>
 		<td>11.06.2013</td>
