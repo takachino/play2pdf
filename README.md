@@ -74,7 +74,7 @@ searched for font files.
 Installation
 ------------
 
-Currently, the module is hosted at http://alias1.github.io/play20-pdf/snapshots/
+Currently, the module is hosted at http://alias1.github.io/play2pdf/snapshots/
 Therefore, including the following lines in your ```Build.scala``` will resolve it:
 ```
 val appDependencies = Seq(
