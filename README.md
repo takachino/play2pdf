@@ -14,7 +14,7 @@ Usage
 -----
 
 I have provided a simple example application at
-https://github.com/alias1/play2pdf/samples/pdf-sample
+https://github.com/takachino/play2pdf/samples/pdf-sample
 
 You can use a standard Play! scala template like this one:
 ``` html
@@ -74,7 +74,7 @@ searched for font files.
 Installation
 ------------
 
-Currently, the module is hosted at http://alias1.github.io/play2pdf/snapshots/
+Currently, the module is hosted at http://takachino.github.io/play2pdf/snapshots/
 Therefore, including the following lines in your ```Build.scala``` will resolve it:
 ```
 val appDependencies = Seq(
@@ -83,7 +83,7 @@ val appDependencies = Seq(
 )
 val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings(
   ...
-  resolvers += Resolver.url("play2pdf Repository", url("http://alias1.github.io/play2pdf/snapshots/"))(Resolver.ivyStylePatterns)
+  resolvers += Resolver.url("play2pdf Repository", url("http://takachino.github.io/play2pdf/snapshots/"))(Resolver.ivyStylePatterns)
 )
 ```
 After the next restart of Play!, the module is available.
